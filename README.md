@@ -6,12 +6,6 @@ industrial-grade sensors and transmits fixed-point-encoded readings
 over a 500 kbps CAN bus; Node 2 decodes them, classifies alert status,
 and displays results on an SSD1306 OLED with rotary-encoder navigation.
 
-Mini project for **21ECC312T - Hardware Interfacing and Networking**,
-Dept. of ECE, SRM Institute of Science and Technology (May 2026).
-
-**Authors:** Sharvesh S, David Samuel S, Kaushik S
-**Guide:** Dr. P. Eswaran
-
 ---
 
 ## Repo layout
@@ -71,11 +65,34 @@ with fixed safety classifications rather than user-editable sliders.
 ## Libraries required (Arduino IDE Library Manager)
 
 - `mcp_can` (Seeed-Studio)
-- `Adafruit BMP280 Library` + `Adafruit Unified Sensor`
-- `Adafruit INA219`
-- `BH1750` (claws)
-- `Adafruit ADXL345`
-- `U8g2`
+
+
+## System Architecture
+
+```text
+Industrial Sensors
+        │
+        ▼
+Arduino UNO (Node 1)
+(Field Controller)
+        │
+        ▼
+MCP2515 + TJA1050
+        │
+     CAN Bus
+        │
+        ▼
+MCP2515 + TJA1050
+        │
+        ▼
+Arduino UNO (Node 2)
+(Monitoring Station)
+        │
+        ▼
+OLED Display
+Real-Time Monitoring
+Alarm Status
+
 
 ## Building
 
@@ -110,8 +127,19 @@ plugged in; it's flagged separately (amber LED) from a live connection
 - RAM usage optimized from 94% to 60-75% of the ATmega328P's 2KB SRAM
 - CAN bus utilization ~2.1% of available 500 kbps bandwidth at 1 Hz update
 
-## Limitations / future scope
+## Applications
 
-Two-node proof of concept, breadboard prototype. Planned extensions:
-multi-node scalability testing, PCB layout, data logging, and an
-IoT/cloud bridge for the CAN bus data.
+- Industrial Process Monitoring
+- Factory Automation
+- Predictive Maintenance
+- Smart Manufacturing
+- Process Control
+
+## Future Enhancements
+
+- Multi-node CAN Network
+- PLC Integration
+- SCADA Software Integration
+- IoT Cloud Connectivity
+
+**Authors:** Sharvesh S, David Samuel S, Kaushik S
