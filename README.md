@@ -101,24 +101,8 @@ Alarm Status
 3. Wire both MCP2515 modules onto the same CANH/CANL pair with 120Ω terminators at each end.
 4. Power both boards — Node 2's OLED should start showing live data within a few seconds of Node 1 booting.
 
-## Dashboard
 
-`dashboard/index.html` connects to the real rig over USB using the
-**Web Serial API** (Chrome or Edge, desktop only). Node 2 already prints
-its decoded sensor values to `Serial` once per cycle for debugging — the
-firmware now adds one extra machine-readable line in that same stream:
 
-```
-$T:33.3,P:1006.0,L:17,V:0.20,I:7,VB:4.97,G:6039,LVL:WARN
-```
-
-Open `dashboard/index.html`, click **Connect device**, and pick Node 2's
-serial port at 115200 baud. The gauges, trend chart, and topology
-animation all update from that live line — nothing is generated in the
-browser. A **Play recorded sample** button replays a fixed sequence
-through the same parser for walkthroughs when the hardware isn't
-plugged in; it's flagged separately (amber LED) from a live connection
-(green LED) so it's never mistaken for real data.
 
 ## Results (from bench testing, see project report)
 
