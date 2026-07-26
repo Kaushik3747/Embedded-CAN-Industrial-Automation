@@ -1,10 +1,6 @@
 # CAN Bus Based Industrial Sensor Network
 
-Two-node distributed sensor monitoring system built on Arduino UNO,
-MCP2515 CAN controllers, and TJA1050 transceivers. Node 1 reads five
-industrial-grade sensors and transmits fixed-point-encoded readings
-over a 500 kbps CAN bus; Node 2 decodes them, classifies alert status,
-and displays results on an SSD1306 OLED with rotary-encoder navigation.
+A PLC & SCADA-inspired Industrial Automation System developed using Arduino UNO, MCP2515 CAN Controllers, TJA1050 CAN Transceivers, and the CAN Bus protocol for reliable real-time distributed communication. The system integrates BMP280 (Temperature & Pressure), INA219 (Voltage, Current & Power), BH1750 (Ambient Light), ADXL345 (Vibration), and MQ-2 (Gas Detection) sensors to continuously monitor industrial parameters. A SCADA-like HMI built with an OLED display and rotary encoder provides real-time visualization, threshold-based alarms, and centralized process monitoring, demonstrating key concepts of Industrial Automation and Industry 4.0.
 
 ---
 
