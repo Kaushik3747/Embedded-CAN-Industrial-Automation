@@ -98,8 +98,6 @@ Alarm Status
 4. Power both boards — Node 2's OLED should start showing live data within a few seconds of Node 1 booting.
 
 
-
-
 ## Results (from bench testing, see project report)
 
 - 100% message delivery, zero bit errors over 24h continuous run
